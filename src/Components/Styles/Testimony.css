@@ -1,0 +1,140 @@
+.testimony {
+    width: 100%;
+    background: linear-gradient(180deg, #7ef1f7 0%, #e5fdfd 100%);
+    padding: 80px 0;
+    margin-top: 15px;
+  }
+  
+  body.dark-mode .testimony {
+    background: linear-gradient(180deg, #47c7ce 0%, #9cd8d8 100%);
+}
+
+.subtitle {
+  color: #1e84d8;
+}
+
+body.dark-mode .subtitle {
+  color: #e2e8f0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+.testimony__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 60px 1fr 60px;
+    gap: 2em;
+    align-items: center;
+}
+
+.testimony__body {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+
+    opacity: 0;
+    transform: translateX(40px);
+    pointer-events: none;
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.testimony__body--show {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: unset;
+}
+
+.testimony__course {
+    background-color: #1e84d8;
+    color: #e5e5f7;
+    display: inline-block;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+.testimony__img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.testimony__arrow {
+    width: 40px;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.testimony__arrow:hover {
+    transform: scale(1.2);
+}
+
+.testimony__dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.dot:hover {
+  background: #d33a2c;
+  transform: scale(1.2);
+}
+
+.dot.active {
+  background: #d33a2c;
+  transform: scale(1.3);
+}
+
+.fade {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 650px) {
+
+  .testimony__container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .testimony__body {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+  }
+
+  .testimony__img {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .testimony__texts {
+    max-width: 100%;
+  }
+
+}

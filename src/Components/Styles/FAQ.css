@@ -1,0 +1,128 @@
+.questions {
+    position: relative;
+    text-align: center;
+    background:#f5f7f6;
+    padding-top: 10px;
+    overflow:hidden;
+    z-index: 2;
+}
+
+.questions::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  inset:0;
+
+  background-image:url("/src/assets/images/abstract.jpg");
+  background-size:900px;
+  background-repeat:repeat;
+
+  transform:translateY(0px);
+  opacity:0.1;
+
+  transition:
+    transform 1.1s ease,
+    opacity 1.1s ease;
+
+  z-index:0;
+}
+
+body.dark-mode .questions::before {
+  opacity: 0.5;
+  background-size:920px;
+}
+
+.questions__container {
+    display: grid;
+    gap: 1.5em;
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.questions__subtitle {
+    color: #00627b;
+}
+
+body.dark-mode .questions__subtitle {
+  color: #111;
+  font-size: 30px;
+}
+
+
+.questions__padding {
+    padding: 0;
+    transition: padding .3s;
+    border: 2px solid rgb(211, 58, 44);
+    border-radius: 6px;
+}
+
+body.dark-mode .questions__padding {
+    border: 2px solid rgb(243, 43, 25);
+}
+
+.questions__padding--add {
+    max-height: 250px;
+    padding-bottom: 30px;
+}
+
+.questions__answer {
+    padding: 0 30px 0;
+    overflow: hidden;
+    color: #00627b;
+}
+
+body.dark-mode .questions__answer {
+  color: #111;
+}
+
+.questions__title {
+    text-align: left;
+    display: flex;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 20px 0 20px;
+    color: #00627b;
+    justify-content: space-between;
+}
+
+.questions__paragraph {
+    font-size: large;
+}
+
+body.dark-mode .questions__paragraph {
+  color: #111;
+}
+
+.questions__arrow {
+    border-radius: 50%;
+    background-color: rgb(211, 58, 44);
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    transition: transform .3s;
+    z-index: 1;
+}
+
+.questions__arrow--rotate {
+    transform: rotate(180deg);
+}
+
+.questions__show {
+    text-align: left;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+}
+
+.questions__img {
+    display: block;
+}
+
+@media (max-width: 643px) {
+   .questions__padding--add {
+    max-height: 300px;
+    }
+}

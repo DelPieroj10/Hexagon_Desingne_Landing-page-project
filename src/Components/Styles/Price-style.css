@@ -1,0 +1,128 @@
+.price {
+  text-align: center;
+  background-color: var(--bg);
+}
+
+body.dark-mode .price {
+  background: var(--bg);
+}
+
+.price__table {
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.price__element{
+  position:relative;
+  background-color: #cef3f5;
+  text-align: center;
+  border-radius: 10px;
+  width: 380px;
+  padding: 40px;
+  --color-plan: #696871;
+  --color-price: #1d293f;
+  --bg-cta: #ffff;
+  --color-cta: #5454d4;
+  --color-items: #89888d;
+}
+
+.price__element:hover{
+  width: 395px;
+  padding: 50px;
+  transform:translateY(-10px) scale(1.03);
+  transition:.5s;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.price__element--best {
+    width: 400px;
+    padding: 80px 40px;
+    background-color: rgb(211, 58, 44);
+    --color-plan: rgba(255 255 255 / 75%);
+    --color-price: #ffff;
+    --bg-cta: rgb(92, 23, 16);
+    --color-cta: #ffff;
+    --color-items: #ffff;
+}
+
+.price__element--best:hover {
+    width: 400px;
+    padding: 90px 50px;
+    font-size: 1.5rem;
+    transition: .7s;
+}
+
+.price__element--best::before{
+
+  content:"POPULAR";
+
+  position:absolute;
+  top:-15px;
+  left:50%;
+  transform:translateX(-50%);
+
+  background:#1d293f;
+  color:white;
+
+  padding:6px 16px;
+  font-size:1rem;
+  border-radius:20px;
+}
+
+.price__name {
+    color: var(--color-plan);
+    margin-bottom: 15px;
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.price__price {
+    font-size: 2rem;
+    color: var(--color-price);
+}
+
+.price__items {
+    margin-top: 35px;
+    display: grid;
+    gap: 1em;
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: var(--color-items);
+}
+
+.price__cta {
+    display: block;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: var(--bg-cta);
+    font-weight: 600;
+    color: var(--color-cta);
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5);
+}
+
+@media (max-width:900px){
+
+.price__table{
+  flex-direction:column;
+}
+
+.price__element{
+  width:100%;
+  max-width:420px;
+}
+
+.price__element--best {
+  width: 90%;
+}
+
+ .price__price {
+  font-size: 2rem;
+}
+
+}

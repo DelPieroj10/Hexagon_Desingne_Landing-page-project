@@ -1,0 +1,54 @@
+.contact {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  background-image:url("/src/assets/images/abstract.jpg");
+  overflow: hidden;
+}
+
+.contact__title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: azure;
+}
+
+.contact__text {
+  margin-bottom: 30px;
+  color: #aaa;
+}
+
+.contact__form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact__input,
+.contact__textarea {
+  background-color: azure;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.contact__textarea {
+  min-height: 120px;
+  color: var(--text);
+}
+
+body.dark-mode .contact__textarea {
+  color: #111111;
+
+}
+
+.contact__submit {
+  background: #2091f9;
+  border-color: #2091f9;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}

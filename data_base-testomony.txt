@@ -1,0 +1,48 @@
+DATA BASE TESTIMONY HEXAGON DESIGN
+----------------------------------
+
+import christianBuehner from "../../assets/images/christian-buehner-Foto_1.jpg"
+import gabrielaSilverio from "../../assets/images/gabriela-silverio-Foto_2.jpg"
+import artemBeliaikin from "../../assets/images/artem-beliaikin-Foto_5.jpg"
+import eduardoBustamante from "../../assets/images/Eduardo-Bustamante_4.jpg"
+import christinaWocintechchat from "../../assets/images/christina-wocintechchat-Foto_3.jpg"
+
+
+export const TestimonyData = [
+    {
+      id: 1,
+      name: "Christian Buehner",
+      role: "Owner of FreeStyle Store",
+      review: "Working with this team completely transformed the visual identity of my store.They understood the brand perfectly and delivered a professional result that immediately improved the perception of our business.",
+      image: christianBuehner,
+    },
+    {
+      id: 2,
+      name: "Gabriela Silveiro",
+      role: "Fashion Designer",
+      review: "The photography enhancement service exceeded my expectations. The attention to detail, lighting correction, and color balance brought my designs to life in a way I hadn't seen before. It gave my portfolio a much more professional and editorial look.",
+      image: gabrielaSilverio,
+    },
+    {
+      id: 3,
+      name: "Artemisa Beliaikin",
+      role: "Regional Manager of Buchannans Colombia",
+      review: "Working with this team was a seamless experience from start to finish. Their ability to understand our brand identity and translate it into high-quality visual content was impressive, increasing our engagement by over 40%. The final results aligned perfectly with our marketing standards.",
+      image: artemBeliaikin,
+    },
+    {
+      id: 4,
+      name: "Eduardo Bustamante",
+      role: "Economist and Director of GM Costa Rica",
+      review: "I was particularly impressed by the level of professionalism and efficiency throughout the entire process. The team delivered on time and provided solutions that elevated the visual communication of our business. Highly recommended for any company looking to improve its image.",
+      image: eduardoBustamante,
+    },
+    {
+      id: 5,
+      name: "Christina Wocintechchat",
+      role: "Project Manager at SHI International Corporation",
+      review: "Hexagon Designe impressed me with their seamless blend of creativity and professionalism. Their interior design elevated our workspace, while their web development delivered a sleek, user‑friendly platform. The branding work captured our identity with clarity and impact. Communication was transparent, deadlines were met, and expectations exceeded. I highly recommend Hexagon Design as a strategic partner for design and digital transformation.",
+      image: christinaWocintechchat,
+    },
+  ];
+

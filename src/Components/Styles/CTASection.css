@@ -1,0 +1,51 @@
+.cta {
+  padding: 80px 20px;
+  text-align: center;
+  background-image: url('../../assets/images/business.png');
+  color: white;
+}
+
+.cta:hover,
+button:hover {
+  filter: brightness(1.1);
+}
+
+.cta__content:hover{
+  width: 900px;
+  height: 500px;
+  background-image: url('../../assets/images/business.png');
+  transition: 0.9s;
+  font-size: 1.2rem;
+  overflow: hidden;
+}
+
+.cta__actions button {
+  margin: 10px;
+  padding: 8px;
+  background: #2d405f;
+  border: #2d405f;
+  border-radius: 5px;
+  transition: transform 0.2s ease;
+}
+
+.cta__actions a{
+  color: white;
+  text-decoration: none;
+}
+
+.cta__actions button:hover {
+  transform: scale(1.05);
+  padding: 10px;
+}
+
+@media (max-width: 950px) {
+  .cta__content:hover{
+    width: 400px;
+    height: 600px;
+    margin: 0;
+    background-image: url('../../assets/images/business.png');
+    background-position: center;
+    transition: 0.9s;
+    overflow: hidden;
+  } 
+}
