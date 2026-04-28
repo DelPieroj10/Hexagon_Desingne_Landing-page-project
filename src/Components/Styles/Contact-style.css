@@ -32,6 +32,7 @@
   border-radius: 8px;
   border: none;
   outline: none;
+  color: var(--text);
 }
 
 .contact__textarea {
@@ -39,9 +40,9 @@
   color: var(--text);
 }
 
+body.dark-mode .contact__input,
 body.dark-mode .contact__textarea {
   color: #111111;
-
 }
 
 .contact__submit {

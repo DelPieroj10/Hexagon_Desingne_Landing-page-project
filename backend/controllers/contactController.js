@@ -53,3 +53,25 @@ export const sendController = async (req, res) => {
     res.status(500).json({ message: e.message + "❌" });
   }
 };
+
+export const getContactsController = async (req, res) => {
+  try {
+    const { data, error } = await supabase
+    .from("contact_email")
+    .select("*")
+    .order("created_at", { ascending: false });
+
+    console.log("SUPABASE GET CONTACTS DATA:", data);
+    console.log("SUPABASE GET CONTACTS ERROR:", error);
+
+    if (error) {
+      console.error("DB ERROR:", error);
+      return res.status(500).json({ message: "Error fetching contacts ❌" });
+    }
+
+    res.json(data);
+  } catch (e) {
+    console.error("SERVER ERROR:", e);
+    res.status(500).json({ message: "Error fetching contacts ❌" });
+  }
+};
