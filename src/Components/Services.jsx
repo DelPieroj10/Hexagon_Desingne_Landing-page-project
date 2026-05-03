@@ -8,19 +8,22 @@ import "./Styles/service-style.css";
 export default function Services() {
   const services = [
     {
-      title: "Interior Design",
-      text: "We design spaces that reflect your personality and lifestyle.",
-      image: Study_room
+      title: "Frontend Development",
+      text: "Building responsive and scalable web applications using React, JavaScript and modern tools.",
+      image: Study_room,
+      href: "#portfolio"
     },
     {
-      title: "Digital Design",
-      text: "Websites and digital experiences that elevate your brand.",
-      image: Image_laptop
+      title: "UX & Problem Solving",
+      text: "Applying user-centered thinking to create intuitive and meaningful digital experiences.",
+      image: Image_laptop,
+      href: "#faq"
     },
     {
-      title: "Brand Identity",
-      text: "Create a strong visual identity for your business.",
-      image: Strategy_branding
+      title: "Why Me?",
+      text: "I am a motivated junior developer focused on growth, clean code and real-world impact.",
+      image: Strategy_branding,
+      href: "#process-component"
     }
   ]; 
 
@@ -54,6 +57,7 @@ export default function Services() {
               title={service.title}
               description={service.text}
               image={service.image}
+              href={service.href}
             />
           ))}
         </div>

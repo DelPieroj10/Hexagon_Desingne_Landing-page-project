@@ -1,0 +1,31 @@
+.dashboard {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+.table_dashboard {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1111;
+  border-radius: 8px;
+  color: #aca8a6;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #3333;
+}
+
+th {
+  background: #222;
+}
+
+tr:hover {
+  background: #1a1a1a;
+  color: whitesmoke;
+}
+

@@ -37,15 +37,16 @@ export default function Hero() {
 
       <div className="hero__container">
         <h1 className="hero-title hero-animate hero-title-anim">
-          Find what you need in Interior Design and Digital Design and, express
-          the best version of yourself and your business.
+          Frontend Developer focused on building intuitive and scalable web experiences
         </h1>
         <p className="hero-paragraph hero-animate hero-paragraph-anim">
-          Choose one of our services and start bringing your personal and
-          professional projects to life.
+          I combine React development with user-centered thinking to create clean, functional and engaging digital products.
+        </p>
+        <p className="hero-animate hero-paragraph-anim">
+          📢 Currently seeking opportunities as a Junior Frontend Developer.
         </p>
         <a href="#contact" className="cta hero-animate hero-cta-anim">
-          Quote here
+          Contact me here
         </a>
       </div>
     </section>

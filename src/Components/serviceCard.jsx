@@ -1,4 +1,4 @@
-export default function ServiceCard({ title, description, image }) {
+export default function ServiceCard({ title, description, image, href }) {
   return (
     <article className="service-card reveal">
       <div className="hexagon-card">
@@ -13,7 +13,7 @@ export default function ServiceCard({ title, description, image }) {
           <p className="service-card_text">{description}</p>
 
           <div className="service-card_reveal">
-            <a href="#" className="service-card_btn">
+            <a href={href} className="service-card_btn">
               Learn More
             </a>
           </div>

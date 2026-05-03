@@ -4,7 +4,7 @@
     background:#f5f7f6;
     padding-top: 10px;
     overflow:hidden;
-    z-index: 2;
+    z-index: 0;
 }
 
 .questions::before{
@@ -13,23 +13,29 @@
   left: 0;
   inset:0;
 
-  background-image:url("/src/assets/images/abstract.jpg");
+  background-image:url("/src/assets/images/abstract-fqa.jpg");
   background-size:900px;
-  background-repeat:repeat;
+  /* background-repeat:repeat; */
 
   transform:translateY(0px);
   opacity:0.1;
-
+  
   transition:
-    transform 1.1s ease,
-    opacity 1.1s ease;
+  transform 1.1s ease,
+  opacity 1.1s ease;
+  
+  z-index:1;
+}
 
-  z-index:0;
+.questions > * {
+  position: relative;
+  z-index: 2;
 }
 
 body.dark-mode .questions::before {
-  opacity: 0.5;
-  background-size:920px;
+  opacity: 0.9;
+  background-size:3800px;
+  transition: .8s ease;
 }
 
 .questions__container {
@@ -39,12 +45,15 @@ body.dark-mode .questions::before {
     padding-bottom: 100px;
 }
 
+body.dark-mode .questions__container {
+  backdrop-filter: blur(6px);
+}
+
 .questions__subtitle {
     color: #00627b;
 }
 
 body.dark-mode .questions__subtitle {
-  color: #111;
   font-size: 30px;
 }
 
@@ -57,7 +66,8 @@ body.dark-mode .questions__subtitle {
 }
 
 body.dark-mode .questions__padding {
-    border: 2px solid rgb(243, 43, 25);
+    border: 2px solid #21ceec;
+    background: rgba(0,0,0,0.4);
 }
 
 .questions__padding--add {
@@ -68,11 +78,12 @@ body.dark-mode .questions__padding {
 .questions__answer {
     padding: 0 30px 0;
     overflow: hidden;
-    color: #00627b;
+    color: #111;
 }
 
-body.dark-mode .questions__answer {
-  color: #111;
+body.dark-mode .questions__answer,
+body.dark-mode .questions__paragraph {
+  color: whitesmoke;
 }
 
 .questions__title {
@@ -85,12 +96,13 @@ body.dark-mode .questions__answer {
     justify-content: space-between;
 }
 
-.questions__paragraph {
-    font-size: large;
+body.dark-mode .questions__title, 
+body.dark-mode .questions__subtitle {
+  color: #21ceec;
 }
 
-body.dark-mode .questions__paragraph {
-  color: #111;
+.questions__paragraph {
+    font-size: large;
 }
 
 .questions__arrow {
@@ -111,14 +123,18 @@ body.dark-mode .questions__paragraph {
 }
 
 .questions__show {
-    text-align: left;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .3s ease;
+  text-align: left;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease;
 }
 
 .questions__img {
-    display: block;
+  display: block;
+}
+
+body.dark-mode .questions__arrow {
+  background-color: #21ceec;
 }
 
 @media (max-width: 643px) {

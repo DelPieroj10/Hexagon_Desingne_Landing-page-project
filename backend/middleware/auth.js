@@ -1,14 +1,16 @@
-const ADMIN_TOKEN = import.meta.env.VIT_ADMIN_TOKEN;
-
+const ADMIN_TOKEN = process.env.ADMIN_TOKEN;
 
 export const verifyAdminToken = (req, res, next) => {
   const token = req.headers.authorization;
 
-  if (!token || token !== ADMIN_TOKEN) {
-    return res.status(401).json({ error: "Unauthorized 🕵🏻‍♂️" });
-  }
   console.log("HEADER TOKEN:", token);
   console.log("EXPECTED TOKEN:", ADMIN_TOKEN);
 
-    next();
+  console.log("ENV ADMIN TOKEN:", process.env.ADMIN_TOKEN);
+
+  if (!token || token !== `Bearer ${ADMIN_TOKEN}`) {
+    return res.status(401).json({ error: "Unauthorized 🕵🏻‍♂️" });
+  }
+
+  next();
 };

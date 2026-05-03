@@ -5,17 +5,17 @@ export default function ProcessComponent() {
     {
       number: "01",
       title: "Strategy",
-      text: "We analyze your business goals and define the best digital strategy.",
+      text: "I analyze business goals and define the best digital strategy.",
     },
     {
       number: "02",
       title: "Design",
-      text: "Our team creates modern and user-focused interfaces.",
+      text: "I create modern and user-focused interfaces.",
     },
     {
       number: "03",
       title: "Development",
-      text: "We build scalable and performant solutions.",
+      text: "I build scalable and performant solutions.",
     },
     {
       number: "04",
@@ -25,7 +25,7 @@ export default function ProcessComponent() {
   ];
 
   return (
-    <section className="process reveal">
+    <section id="process-component" className="process reveal">
       <div className="process__container container">
         <h2 className="process__title">How I Work</h2>
 
