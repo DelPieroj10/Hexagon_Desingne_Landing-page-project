@@ -99,6 +99,8 @@ This project focuses on improving:
 * Portfolio gallery
 * Contact form with validation
 
+## 🔙🔚 Built a full-stack contact system with automated email responses and database persistence using Node.js, Express, Nodemailer, and Supabase.
+
 ## 👨‍💻 Author
 
 Jean Piero Parra
