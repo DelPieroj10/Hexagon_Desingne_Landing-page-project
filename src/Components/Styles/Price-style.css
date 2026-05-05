@@ -21,7 +21,7 @@ body.dark-mode .price {
   background-color: #cef3f5;
   text-align: center;
   border-radius: 10px;
-  width: 380px;
+  width: 400px;
   padding: 40px;
   --color-plan: #696871;
   --color-price: #1d293f;
@@ -39,8 +39,8 @@ body.dark-mode .price {
 }
 
 .price__element--best {
-    width: 400px;
-    padding: 80px 40px;
+    width: 450px;
+    padding: 70px 40px;
     background-color: rgb(211, 58, 44);
     --color-plan: rgba(255 255 255 / 75%);
     --color-price: #ffff;
@@ -51,14 +51,14 @@ body.dark-mode .price {
 
 .price__element--best:hover {
     width: 400px;
-    padding: 90px 50px;
+    padding: 80px 60px;
     font-size: 1.5rem;
     transition: .7s;
 }
 
 .price__element--best::before{
 
-  content:"POPULAR";
+  content:"HIGHLIGHT";
 
   position:absolute;
   top:-15px;
@@ -86,12 +86,12 @@ body.dark-mode .price {
 }
 
 .price__items {
-    margin-top: 35px;
+    margin-top: 30px;
     display: grid;
-    gap: 1em;
+    /* gap: 0.5em; */
     font-weight: 300;
     font-size: 1.2rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     color: var(--color-items);
 }
 

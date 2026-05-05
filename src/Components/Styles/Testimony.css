@@ -5,8 +5,21 @@
     margin-top: 15px;
   }
   
-  body.dark-mode .testimony {
-    background: linear-gradient(180deg, #47c7ce 0%, #9cd8d8 100%);
+body.dark-mode .testimony {
+  background: linear-gradient(180deg, #47c7ce 0%, #9cd8d8 100%);
+}
+
+.testimony__title {
+  text-align: center;
+  /* font-size: 2.5em; */
+  margin-top: -20px;
+  margin-bottom: 30px;
+  color: #1e84d8;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+}
+
+body.dark-mode .testimony__title {
+  color: #111;
 }
 
 .subtitle {

@@ -1,3 +1,4 @@
+import Jean_Piero_Parra_CV from "../assets/video/Jean_Piero_Parra_CV-2026.pdf";
 import Image_AboutUs from "../assets/images/Image_AboutUs.png";
 import './Styles/AboutUs.css'
 
@@ -7,13 +8,20 @@ export default function AboutUs() {
         <div className="about__container container">
           <div className="about__texts">
             <h2 className="about__title">
-              Let us know what you need and we'll quote you right now! But before, let us tell you a little bit about us first.
+              Now, let me tell you a little bit about me.
             </h2>
             <p className="about__paragraph">
-              We are a team of passionate designers and developers dedicated to creating beautiful and functional websites and applications. We would like to continue talking about ourselves and, although we would love to, we prefer to speak with facts. Therefore, we invite you to visit our portfolio.
+              I’m a Frontend Developer specialized in building intuitive and scalable web applications using React and modern web technologies.<br/> 
+              <br/>
+              My background in psychology, coaching, marketing, advertising and graphic design—developed through courses and hands-on learning—allows me to understand how people think, interact and make decisions, which I now apply to create more intuitive and meaningful digital experiences.<br/>
+              <br/>
+              I’ve been developing real-world projects that strengthen my technical skills while improving my ability to solve problems and write clean, maintainable code.<br/>
+              <br/>
+              I’m currently seeking an opportunity to contribute to a team, continue growing and deliver impactful digital solutions.
+
             </p>
-            <a href="#portfolio" className="about__cta">
-              View Portfolio here
+            <a href={Jean_Piero_Parra_CV} download className="about__cta">
+              Download CV here
             </a>
           </div>
 

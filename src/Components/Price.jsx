@@ -4,46 +4,56 @@ export default function Price() {
   const pricingPlans = [
     {
       id:"01",
-      name: "Brand Identity",
-      price: "Take my money at once.",
+      name: "Design Side",
+      price: "I don’t just make things work… I make them feel right.",
       features: [
-        "Logo design", 
-        "Brand guideline", 
-        "Social media assets",
-        "Landing page"
+        "UI fundamentals",
+        "Visual hierarchy",
+        "Layout & composition",
+        "Branding basics",
+        "Design thinking"
       ],
-      cta: "Tell us about your project",
+      cta: "See how I think",
+      href: "#process-component",
       highlight: false,
     },
     {
       id:"02",
-      name: "Photo Enhancement",
-      price: "30% Discount",
+      name: "Frontend Development",
+      price: "This is where things get real.",
       features: [
-        "High Pass technique",
-        "Dodge & Burn",
-        "Hyperrealistic or Subrealistic retouch",
+        "React.js",
+        "JavaScript (ES6+)",
+        "Typescript",
+        "HTML & CSS",
+        "API integration",
+        "Component-based architecture",
+        "→ Currently building real-world projects with React",
       ],
-      cta: "I want this",
+      cta: "Check my work",
+      href: "#portfolio",
       highlight: true,
     },
     {
       id:"03",
-      name: "Interior Design",
-      price: "To hell! I love it. How much does it cost?",
+      name: "Human Factor",
+      price: "I understand users… not just interfaces.",
       features: [
-        "Space analysis",
-        "Professional consulting",
-        "Interior styling",
+        "Psychology background",
+        "Coaching mindset",
+        "Problem solving",
+        "Communication",
+        "Adaptability"
       ],
-      cta: "This is what I need",
+      cta: "Why this matters",
+      href: "#faq",
       highlight: false,
     },
   ];
 
   return (
     <section className="price container reveal">
-      <h1 className="subtitle">Choose the service that best fits your needs</h1>
+      <h1 className="subtitle">Yes, I’m a junior… but not that kind</h1>
 
       <div className="price__table">
         {pricingPlans.map((plan, id) => (
@@ -63,7 +73,7 @@ export default function Price() {
               ))}
             </div>
 
-            <a href="#" className="price__cta">
+            <a href={plan.href} className="price__cta">
               {plan.cta}
             </a>
           </div>

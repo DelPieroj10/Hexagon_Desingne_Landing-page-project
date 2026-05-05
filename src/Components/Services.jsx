@@ -17,13 +17,13 @@ export default function Services() {
       title: "UX & Problem Solving",
       text: "Applying user-centered thinking to create intuitive and meaningful digital experiences.",
       image: Image_laptop,
-      href: "#faq"
+      href: "#process-component"
     },
     {
       title: "Why Me?",
-      text: "I am a motivated junior developer focused on growth, clean code and real-world impact.",
+      text: "I am a junior developer focused on growth, clean code and real-world impact.",
       image: Strategy_branding,
-      href: "#process-component"
+      href: "#about"
     }
   ]; 
 
@@ -44,11 +44,10 @@ export default function Services() {
   }, []);
 
   return (
-
     <section id="services" className="services reveal">
       <div className="services-container container2">
         <h2 className="services_title">
-          My Services
+          My Skills
         </h2>
         <div className="services__grid">
           {services.map((service) => (

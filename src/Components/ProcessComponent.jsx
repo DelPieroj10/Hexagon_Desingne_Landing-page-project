@@ -4,30 +4,30 @@ export default function ProcessComponent() {
   const processSteps = [
     {
       number: "01",
-      title: "Strategy",
-      text: "I analyze business goals and define the best digital strategy.",
+      title: "Understanding the problem",
+      text: "Before writing any code, I focus on understanding the goal, the user needs and the context of the product. This allows me to make better decisions from the start.",
     },
     {
       number: "02",
-      title: "Design",
-      text: "I create modern and user-focused interfaces.",
+      title: "Planning the solution",
+      text: "I break down problems into smaller tasks and define a clear structure before building. This helps me write cleaner code and avoid unnecessary complexity.",
     },
     {
       number: "03",
-      title: "Development",
-      text: "I build scalable and performant solutions.",
+      title: "Building with purpose",
+      text: "I develop using React and modern JavaScript, focusing on reusable components, readability and performance.",
     },
     {
       number: "04",
-      title: "Launch",
-      text: "Your product goes live with full optimization.",
+      title: "Improving and iterating",
+      text: "I continuously test, refine and improve my work based on feedback and new ideas. I see development as an evolving process, not a final result.",
     },
   ];
 
   return (
     <section id="process-component" className="process reveal">
       <div className="process__container container">
-        <h2 className="process__title">How I Work</h2>
+        <h2 className="process__title">How I Think</h2>
 
         <div className="process__steps">
           {processSteps.map((step) => (
