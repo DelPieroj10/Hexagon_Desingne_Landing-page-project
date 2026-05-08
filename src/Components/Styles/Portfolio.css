@@ -37,6 +37,77 @@ body.dark-mode .portfolio {
   border-color: #0ea5e9;
 }
 
+.featured {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+
+  margin-bottom: 5rem;
+  padding: 2rem;
+
+  border-radius: 20px;
+  background: #111;
+
+  box-shadow: 0 0 25px rgba(0,0,0,0.2);
+}
+
+.featured__image img{
+  border-radius: 20px;
+}
+
+.featured__label {
+  font-size: 16px;
+  color: #0ea5e9;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.featured__title, 
+.featured__description {
+  color: whitesmoke;
+}
+.featured__highlight {
+  font-size: 18px;
+  color: #0ea5e9;
+}
+
+.featured__process {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+  text-align: left;
+  color: whitesmoke;
+}
+
+.featured__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: 5px;
+}
+
+.featured__tags span {
+  background: #1f2937;
+  color: #e5e7eb;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 6px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  cursor:pointer;
+}
+
+.featured__tags span:hover {
+  background: #374151;
+}
+
+.featured__actions a{
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 10px 16px;
+}
+
 .portfolio__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -67,8 +138,15 @@ body.dark-mode .portfolio {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  /* color: #374151; */
   color: var(--text);
+}
+
+.card__hint {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #9ca3af;
+  font-style: italic;
+  cursor:pointer;
 }
 
 .card__imageWrapper {
@@ -148,6 +226,7 @@ body.dark-mode .portfolio {
 
 .modal__content {
   background: #111;
+  color: #d1d5db;
   padding: 30px;
   border-radius: 12px;
   max-width: 600px;
@@ -159,6 +238,28 @@ body.dark-mode .portfolio {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 15px;
+}
+
+.modal__process {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+  text-align: left;
+}
+
+.modal__process li {
+  margin-bottom: 0.5rem;
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+.modal__links {
+  margin-bottom: 10px;
+}
+
+.modal__links a {
+  margin-right: 10px;
+  padding: 10px 16px;
+  /* font-weight: bold; */
 }
 
 .modal__button {

@@ -81,7 +81,7 @@ export default function Navbar() {
       <div className="nav_container">
         <div className="nav_logo">
           <img src={logo_hexagon} alt="Hexagon Logo" className="nav_image" />
-          <h2 className="nav_title">Design at your fingertips</h2>
+          <h2 className="nav_title">Piero Bustamante</h2>
         </div>
 
         {/* Desktop Links */}

@@ -4,7 +4,7 @@ export default function TestimonyCard({ name, role, review, image }) {
       <h1 className="testimony__title">
         If you worked with me, this is what you'd notice
       </h1>
-      <p>Based on collaboration, feedback and real-world work dynamics</p>
+      <p className="testimony__title-title">Based on collaboration, feedback and real-world work dynamics</p>
       <article className="testimony__card fade">
         <div className="testimony__body testimony__body--show">
           <div className="testimony__text">

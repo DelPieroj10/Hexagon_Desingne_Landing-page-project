@@ -5,6 +5,10 @@
   color: white;
 }
 
+button {
+  font-size: 18px;
+}
+
 .cta:hover,
 button:hover {
   filter: brightness(1.1);
@@ -17,6 +21,14 @@ button:hover {
   transition: 0.9s;
   font-size: 1.2rem;
   overflow: hidden;
+}
+
+.cta__subtitle {
+  font-size: 18px;
+}
+
+.cta__subtitle-subtitle {
+  color: #555455;
 }
 
 .cta__actions button {

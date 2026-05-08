@@ -131,7 +131,8 @@ html {
 }
 
 .nav_title {
-  font-weight: 300;
+  font-weight: 600;
+  font-size: 25px;
   margin-left: 15px;
   padding-bottom: 5px;
 }

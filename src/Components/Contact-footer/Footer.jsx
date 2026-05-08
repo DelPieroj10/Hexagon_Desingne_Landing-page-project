@@ -4,7 +4,7 @@ import "../Styles/footer.css";
 
 export default function Footer() {
   return (
-    <footer className='footer'>
+    <footer id="footer" className='footer'>
       <section className="footer__container container">
         <div>
           <h2 className="footer__title">Piero Bustamante</h2>

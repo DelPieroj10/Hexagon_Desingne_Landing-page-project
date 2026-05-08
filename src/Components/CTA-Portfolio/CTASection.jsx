@@ -4,17 +4,18 @@ export default function CTASection(){
   return (
     <section className="cta">
       <div className="cta__content">
-        <h2>Let’s build something amazing together</h2>
-        <p>I help brands create modern and high-performing digital experiences.</p>
+        <h1>Let’s work together.</h1>
+        <p className='cta__subtitle' >I’m ready to take on new challenges and contribute as a frontend developer.</p>
 
         <div className="cta__actions">
           <button className="btn-primary">
-            <a href="#contact"> Start a project </a>  
+            <a href="#contact"> Let´s talk </a>  
           </button>
-          <button className="btn-secondary">
-            <a href="#portfolio"> View a portfolio </a>
-          </button>
+          {/* <button className="btn-secondary">
+            <a href="#footer"> Enter my Networks  </a>
+          </button> */}
         </div>
+        <p className='cta__subtitle-subtitle' >Available for junior frontend opportunities</p>
       </div>
     </section>
   );
