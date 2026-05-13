@@ -1,3 +1,4 @@
+
 .portfolio {
   padding: 60px 20px;
   background-color: #f1f5f9;
@@ -54,6 +55,10 @@ body.dark-mode .portfolio {
 
 .featured__image img{
   border-radius: 20px;
+}
+
+.featured__content {
+  max-width: 500px;
 }
 
 .featured__label {
@@ -120,8 +125,11 @@ body.dark-mode .portfolio {
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
   border-radius: 16px;
   overflow: hidden;
+
   background: #111;
   padding: 20px;
   border: 1px solid var(--border);
@@ -136,9 +144,11 @@ body.dark-mode .portfolio {
 
 .card__content {
   padding: 20px;
+  min-height: 140px;
+
   display: flex;
   flex-direction: column;
-  color: var(--text);
+  color: whitesmoke
 }
 
 .card__hint {

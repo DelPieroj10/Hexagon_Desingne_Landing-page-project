@@ -18,9 +18,7 @@ export default function FAQItem ({question, answer}) {
         </h3>
 
         <p 
-          className="question__show"
-          style={{height: open ? "auto" : "0px"}}
-        >
+          className={`question__show ${open ? "question__show--open" : ""}`} >
           {answer}
         </p>
       </div>

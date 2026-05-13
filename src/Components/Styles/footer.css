@@ -1,6 +1,7 @@
 .footer {
     background-color: var(--primary);
     color: var(--text);
+    margin-top: -40px;
 }
 
 .footer__title {
@@ -34,6 +35,11 @@
 .nav__anchor {
     text-decoration: none;
     color: inherit;
+}
+
+.nav__anchor:hover {
+    color: var(--text);
+    text-decoration: underline;
 }
 
 .nav__link--footer {

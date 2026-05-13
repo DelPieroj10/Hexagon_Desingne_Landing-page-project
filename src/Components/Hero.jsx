@@ -43,7 +43,7 @@ export default function Hero() {
           I combine React development with user-centered thinking to create clean, functional and engaging digital products.
         </p>
         <p className="hero-animate hero-paragraph-anim">
-          \ Currently seeking opportunities as a Junior Frontend Developer.
+          \ Currently available for opportunities as a Junior Frontend Developer.
         </p>
         <a href="#contact" className="cta hero-animate hero-cta-anim">
           Contact me here

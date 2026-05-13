@@ -1,9 +1,9 @@
 
 .services{
   position: relative;
-  padding:120px 0;
+  padding:120px 20px;
   background:#f7f7f7;
-  margin-top: -190px;
+  margin-top: -220px;
   overflow:hidden;
   z-index: 1;
 }
@@ -20,7 +20,7 @@ body.dark-mode .services {
   inset:0;
 
   background-image:url("/src/assets/images/abstract.jpg");
-  background-size:780px;
+  background-size:790px;
   background-repeat:repeat;
 
   transform:translateY(-120px);
@@ -45,8 +45,8 @@ body.dark-mode .services {
 
 .services_title{
   text-align:center;
-  font-size:2.5rem;
-  margin-top: 70px;
+  font-size:3rem;
+  margin-top: 160px;
   margin-bottom:40px;
 }
 
@@ -67,6 +67,10 @@ body.dark-mode .services .services.title {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  margin-left: 5%;
+  max-width: 550px;
+  
   overflow:visible;
   will-change: transform;
   

@@ -11,11 +11,7 @@ export default function CTASection(){
           <button className="btn-primary">
             <a href="#contact"> Let´s talk </a>  
           </button>
-          {/* <button className="btn-secondary">
-            <a href="#footer"> Enter my Networks  </a>
-          </button> */}
         </div>
-        <p className='cta__subtitle-subtitle' >Available for junior frontend opportunities</p>
       </div>
     </section>
   );

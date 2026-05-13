@@ -53,7 +53,7 @@ export default function Price() {
 
   return (
     <section className="price container reveal">
-      <h1 className="subtitle">Yes, I’m a junior… but not that kind</h1>
+      <h1 className="price__subtitle">Yes, I’m a junior… but not that kind</h1>
 
       <div className="price__table">
         {pricingPlans.map((plan, id) => (

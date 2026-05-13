@@ -150,14 +150,21 @@ export default function Portfolio() {
       </motion.div>
 
       {selectedProject && (
-        <div className="modal">
-          <div className="modal__content">
+        <div 
+          className="modal"
+          onClick={() => setSelectedProject(null)}  
+        >
+          <div 
+            className="modal__content" 
+            onClick={(e) => e.stopPropagation()}
+          >
             <img src={selectedProject.image} />
 
             <h3>{selectedProject.title}</h3>
             <p>{selectedProject.description}</p>
 
             <h4 className="title__process">What I did:</h4>
+            
             {selectedProject.process && (
               <ul className="modal__process">
                 {selectedProject.process.map((item, id) => (

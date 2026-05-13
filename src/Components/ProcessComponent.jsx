@@ -1,4 +1,6 @@
 import "./Styles/Process.css";
+import { motion } from "framer-motion";
+import { staggerContainer } from "./Styles/animation";
 
 export default function ProcessComponent() {
   const processSteps = [
@@ -25,25 +27,30 @@ export default function ProcessComponent() {
   ];
 
   return (
-    <section id="process-component" className="process reveal">
+    <motion.section
+      id="process-component"
+      className="process reveal"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.2 }}
+    >
       <div className="process__container container">
         <h2 className="process__title">How I Think</h2>
 
         <div className="process__steps">
           {processSteps.map((step) => (
-            <div 
-              key={step.number} 
-              className="process__step"
-            >
-              <div className="process__number process_icon"> {step.number} </div>
+            <div key={step.number} className="process__step">
+              <div className="process__number process_icon">
+                {" "}
+                {step.number}{" "}
+              </div>
               <h3 className="process__subtitle"> {step.title} </h3>
-              <p className="process__text">
-                {step.text}
-              </p>
+              <p className="process__text">{step.text}</p>
             </div>
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

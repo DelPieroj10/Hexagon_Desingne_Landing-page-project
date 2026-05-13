@@ -7,8 +7,9 @@ export default function Footer() {
     <footer id="footer" className='footer'>
       <section className="footer__container container">
         <div>
-          <h2 className="footer__title">Piero Bustamante</h2>
-          <p>Frontend Developer</p>
+          <h2 className="footer__title">Jean Piero Parra Bustamante</h2>
+          <p>Frontend Developer</p><br />
+          <p>Built with React, Framer Motion and obsession for detail.</p>
         </div>
 
         <nav className="nav nav--footer">
