@@ -19,8 +19,9 @@ export class Agent {
   }
 
   update() {
-    this.pos.x += this.vel.x;
-    this.pos.y += this.vel.y;
+    const s = this.speed ?? 1;
+    this.pos.x += this.vel.x * s;
+    this.pos.y += this.vel.y * s;
     this.time  += this.pulseSpeed;
   }
 

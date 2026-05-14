@@ -11,6 +11,7 @@
   color: #c9c0ff;
   text-align: center;
   overflow: hidden;
+  cursor: crosshair;
 }
 
 .creative-lab__header h2 {
@@ -47,3 +48,53 @@
   background: #0a0a0f;
 }
 
+
+.creative-lab__controls {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.creative-lab__slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.creative-lab__slider em {
+  color: #9b7fff;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.creative-lab__slider input[type="range"] {
+  -webkit-appearance: none;
+  width: 140px;
+  height: 3px;
+  background: rgba(155, 127, 255, 0.25);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.creative-lab__slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #9b7fff;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.creative-lab__slider input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+}
