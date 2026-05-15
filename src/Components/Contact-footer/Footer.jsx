@@ -12,6 +12,25 @@ export default function Footer() {
           <p>Built with React, Framer Motion and obsession for detail.</p>
         </div>
 
+        <div className="footer__social">
+          <h3>You can also found me here. </h3>
+          <a href="https://www.linkedin.com/in/jean-piero-parra-bustamante/" 
+            className="footer__icon"
+            target="_blank"
+            rel="noopener noreferrer" 
+          >
+            <img src={LinkedInIcon} alt="LinkedIn Icon" className="footer__img" />
+          </a>
+          <a href="https://github.com/DelPieroj10 " 
+            className="footer__icon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={GitHubIcon} alt="GitHub Icon" className="footer__img" />
+          </a>
+          <p>Cali, Colombia</p>
+        </div>
+
         <nav className="nav nav--footer">
           <ul className="nav__link nav__link--footer">
             <li className="nav__item nav__item--footer"> 
@@ -31,22 +50,6 @@ export default function Footer() {
       </section>
 
       <section className="footer__copy container">
-        <div className="footer__social">
-          <a href="https://www.linkedin.com/in/jean-piero-parra-bustamante/" 
-            className="footer__icon"
-            target="_blank"
-            rel="noopener noreferrer" 
-          >
-            <img src={LinkedInIcon} alt="LinkedIn Icon" className="footer__img" />
-          </a>
-          <a href="https://github.com/DelPieroj10 " 
-            className="footer__icon"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={GitHubIcon} alt="GitHub Icon" className="footer__img" />
-          </a>
-        </div>
 
         <h3 className="footer__copyright">
           © {new Date().getFullYear()} Piero Bustamante. All rights reserved.

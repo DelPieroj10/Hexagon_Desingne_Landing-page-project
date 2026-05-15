@@ -17,8 +17,10 @@
 }
 
 .footer__container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
     align-items: center;
     border-bottom: 1px solid #fff;
     padding-bottom: 60px;
@@ -29,6 +31,7 @@
     display: grid;
     gap: 1em;
     grid-auto-flow: row;
+    justify-content: end;
     height: 100%;
 }
 
@@ -44,9 +47,9 @@
 
 .nav__link--footer {
     display: grid;
-    grid-template-columns: 1 1fr;
+    grid-template-columns: 1fr;
     text-align: left;
-    margin-right: 30px;
+    margin-right: 60px;
     padding-left: 0;
     list-style: none;
     color: azure;
@@ -73,4 +76,28 @@
 
 .footer__img {
     width: 30px;
+}
+
+@media (max-width: 768px) {
+    .footer__container {
+        grid-template-columns: 1fr;  
+        text-align: center;
+    }
+
+    .footer__social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav--footer {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav__link--footer {
+        text-align: center;
+        margin-right: 0;
+        padding-left: 0;
+    }
 }

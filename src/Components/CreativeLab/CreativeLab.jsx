@@ -104,7 +104,7 @@ export default function CreativeLab() {
 
         <h2>Agent Network Simulation</h2>
 
-        <p>
+        <p className="creative-lab__label">
           Interactive particle system built with Canvas API, vector math and
           real-time rendering.
         </p>
