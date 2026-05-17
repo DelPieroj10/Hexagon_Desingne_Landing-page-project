@@ -6,6 +6,6 @@ import { verifyAdmin } from "../controllers/adminController.js";
 const router = express.Router();
 
 router.post("/contact", sendController);
-router.get("/contacts", verifyAdmin, getContactsController);
+router.get("/contacts", verifyAdminToken, getContactsController);
 
 export default router;

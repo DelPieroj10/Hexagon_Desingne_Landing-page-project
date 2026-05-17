@@ -10,7 +10,7 @@ export const sendController = async (req, res) => {
 
   try {
     const { data, error } = await supabase
-      .from("contact_email")
+      .from("contacts")
       .insert([{ name, email, message }]);
 
     console.log("SUPABASE DATA:", data);
@@ -57,7 +57,7 @@ export const sendController = async (req, res) => {
 export const getContactsController = async (req, res) => {
   try {
     const { data, error } = await supabase
-    .from("contact_email")
+    .from("contacts")
     .select("*")
     .order("created_at", { ascending: false });
 
