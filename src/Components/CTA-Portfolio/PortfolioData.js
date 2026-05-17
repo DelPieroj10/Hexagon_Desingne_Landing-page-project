@@ -1,9 +1,9 @@
-import swapiApp from "../../assets/projects/swapi_app-infinite_scroll-1.png";
+import swapiApp from "../../assets/projects/temp-swapi_app-1.png";
 import productExplorer from "../../assets/projects/react-product-explorer-2.png";
-import facialRetouching from "../../assets/projects/facial_retouching-1.png";
+import facialRetouching from "../../assets/projects/temp-facial_retouch-1.png";
 import El_Silencio_de_las_Tortugas from "../../assets/projects/flayer-player-el_silencio_de_la_tortuga-1.jpg";
-import brochureScarecorow from "../../assets/projects/flayer-scarecrow_play-1.png";
-import KattiesApp from "../../assets/projects/Katties_app-calling2api-with-infinite_scroll.png";
+import brochureScarecorow from "../../assets/projects/temp-flayer-scarecrow_brouchure-1.png";
+import KattiesApp from "../../assets/projects/temp-katties_app.png";
 
 export const projects = [
   {
