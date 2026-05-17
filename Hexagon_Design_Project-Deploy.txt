@@ -1,0 +1,16 @@
+Hexagon Design Project / Deploy:
+----------------------
+
+
+https://hexagon-desingne-landing-page-project.onrender.com/
+
+
+
+Dashboard:
+ 
+const handleKey = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key === "D") {
+        setShowAdmin(true);
+      }
+    };
+    window.addEventListener("keydown", handleKey);

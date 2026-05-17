@@ -2,6 +2,8 @@ import { form } from "framer-motion/client";
 import { useState, useEffect } from "react";
 import "../Styles/contactsDashboard.css";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 export default function Dashboard() {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -27,7 +29,7 @@ export default function Dashboard() {
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("http://localhost:3001/admin/login", {
+    const res = await fetch(`${API_URL}/admin/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +53,7 @@ export default function Dashboard() {
     const fetchContacts = async () => {
       setLoading(true);
       try {
-        const res = await fetch("http://localhost:3001/contacts", {
+        const res = await fetch(`${API_URL}/contacts`, {
           credentials: "include",
         });
         if (!res.ok) {
