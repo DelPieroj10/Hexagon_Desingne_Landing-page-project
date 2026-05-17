@@ -45,7 +45,7 @@ export default function Hero() {
         <p className="hero-animate hero-paragraph-anim">
           \ Currently available for opportunities as a Junior Frontend Developer.
         </p>
-        <a href="#contact" className="cta hero-animate hero-cta-anim">
+        <a href="#contact" className="hero-cta hero-animate hero-cta-anim">
           Contact me here
         </a>
       </div>

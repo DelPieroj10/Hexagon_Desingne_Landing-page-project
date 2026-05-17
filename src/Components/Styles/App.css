@@ -351,7 +351,7 @@ body.dark-mode .hero::before {
   color: #dbeafe;
 }
 
-.cta {
+.hero-cta {
   display: inline-block ;
   margin-top: 3rem;
   background-color: var(--accent);
@@ -364,7 +364,7 @@ body.dark-mode .hero::before {
   cursor: pointer;
 }
 
-.cta:hover {
+.hero-cta:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   background: #2196f3;
@@ -382,10 +382,6 @@ body.dark-mode .hero::before {
 
 .hero-paragraph-anim{
   animation-delay: 0.7s;
-}
-
-.hero-cta-anim{
-  animation-delay: 1.1s;
 }
 
 .hero-cta-anim{
