@@ -74,7 +74,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     const handleKey = (e) => {
-      if (e.ctrlKey && e.shiftKey && e.key === "D") {
+      if (e.ctrlKey && e.shiftKey && e.key === "d") {
         setShowAdmin(true);
       }
     };
