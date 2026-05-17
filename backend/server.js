@@ -11,7 +11,10 @@ const app = express();
 app.use(cookieParser());
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "https://hexagon-design-landing-page-project.vercel.app/"
+  ],
   credentials: true,
 }));
 
