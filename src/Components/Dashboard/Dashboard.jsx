@@ -2,7 +2,7 @@ import { form } from "framer-motion/client";
 import { useState, useEffect } from "react";
 import "../Styles/contactsDashboard.css";
 
-const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Dashboard() {
   const [contacts, setContacts] = useState([]);
@@ -74,7 +74,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     const handleKey = (e) => {
-      if (e.ctrlKey && e.shiftKey && e.key === "d") {
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "d") {
         setShowAdmin(true);
       }
     };

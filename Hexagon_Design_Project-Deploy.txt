@@ -1,14 +1,16 @@
 Hexagon Design Project / Deploy:
 ----------------------
 
-
+https://hexagon-desingne-landing-page-proje.vercel.app/
+hexagon-desingne-landing-page-project-6bu6818bh.vercel.app
 https://hexagon-desingne-landing-page-project.onrender.com/
 
 
 
 Dashboard:
- 
-const handleKey = (e) => {
+
+1. Key F12 
+2. const handleKey = (e) => {
       if (e.ctrlKey && e.shiftKey && e.key === "D") {
         setShowAdmin(true);
       }
