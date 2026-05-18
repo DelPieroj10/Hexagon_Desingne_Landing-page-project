@@ -6,12 +6,12 @@ This project was created as part of my **Frontend Developer portfolio** to pract
 
 ## Preview
 
-![project preview](src/assets/images/Preview-4firsts-sections.png)
+![project preview](src/assets/images/hexagon-desingne-landing-page-img.png)
 
 ## 🚀 Live Features
 
 * Hero section with **video background**
-* Hexagon themed design
+* Hexagon-themed design
 * Services section with **hexagon cards**
 * Scroll reveal animations using **Intersection Observer**
 * Background transition between sections
