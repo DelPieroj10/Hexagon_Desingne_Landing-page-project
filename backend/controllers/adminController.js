@@ -2,10 +2,10 @@ export const login = (req, res) => {
   const { password } = req.body;
 
   if (password === process.env.ADMIN_TOKEN) {
-    res.cookie("admin", "true", {
+    res.cookie("admin_token", "true", {
       httpOnly: true,
-      sameSite: "lax",
-      secure: false,
+      secure: true,
+      sameSite: "none",
     });
     return res.json({ success: true, message: "Access granted 🔓" });
   }
@@ -15,7 +15,7 @@ export const login = (req, res) => {
 };
 
 export const verifyAdmin = (req, res, next) => {
-  if (req.cookies.admin === "true") {
+  if (req.cookies.admin_token === "true") {
     return next();
   }
   return res
