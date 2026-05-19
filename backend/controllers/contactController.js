@@ -5,25 +5,25 @@ export const sendController = async (req, res) => {
   const { name, email, message } = req.body || {};
 
   if (!name || !email || !message) {
-    return res.status(400).json({ message: "All fields are required" });
+    return res.status(400).json({ 
+      message: "All fields are required" 
+    });
   }
 
   try {
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("contacts")
       .insert([{ name, email, message }]);
 
     if (error) {
-      return res
-        .status(500).json({ 
-          message: "Error saving message to database ❌" 
+      console.error("SUPABASE INSERT ERROR:", error);
+
+      return res.status(500).json({ 
+        message: "Error saving message to database ❌" 
       });
     }
     try {
       const transporter = nodemailer.createTransport({
-        // host: "smtp.gmail.com",
-        // port: 587,
-        // secure: false,
         service: "gmail",
         auth: {
           user: process.env.EMAIL_USER,
@@ -48,12 +48,16 @@ export const sendController = async (req, res) => {
     } catch (emailError) {
       console.error("EMAIL ERROR:", emailError);
 
-      return res.json({ message: "Message received successfully ✔" });
+      return res.json({ 
+        message: "Message received successfully ✔" 
+      });
     }  
   } catch (e) {
     console.error("FULL ERROR:", e);
 
-    return res.status(500).json({ message: "Internal server error ❌" });
+    return res.status(500).json({
+      message: "Internal server error ❌"
+    });
   }
 };
 
