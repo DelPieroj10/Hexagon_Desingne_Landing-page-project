@@ -103,6 +103,6 @@ This project focuses on improving:
 
 ## 👨‍💻 Author
 
-Jean Piero Parra
-Frontend Developer in training
+Jean Piero Parra <br/>
+Frontend Developer
 
