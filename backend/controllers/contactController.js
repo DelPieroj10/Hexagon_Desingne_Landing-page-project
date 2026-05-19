@@ -23,28 +23,29 @@ export const sendController = async (req, res) => {
       });
     }
     try {
-      const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASS,
-        },
-        family: 4,
-      });
-      await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: process.env.EMAIL_USER,
-        replyTo: email,
-        subject: "New message from contact form",
-        text: `You have received a new message from: \nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
-      });
-      await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: email,
-        subject: "Thanks for contacting me!",
-        text: `Hello ${name},\n\n
-          Thank you for contacting me. I will get back to you soon!\n\nBest regards,\nJean Piero`,
-      });
+      console.log("Email service temporarily disabled");
+      // const transporter = nodemailer.createTransport({
+      //   service: "gmail",
+      //   auth: {
+      //     user: process.env.EMAIL_USER,
+      //     pass: process.env.EMAIL_PASS,
+      //   },
+      //   family: 4,
+      // });
+      // await transporter.sendMail({
+      //   from: process.env.EMAIL_USER,
+      //   to: process.env.EMAIL_USER,
+      //   replyTo: email,
+      //   subject: "New message from contact form",
+      //   text: `You have received a new message from: \nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
+      // });
+      // await transporter.sendMail({
+      //   from: process.env.EMAIL_USER,
+      //   to: email,
+      //   subject: "Thanks for contacting me!",
+      //   text: `Hello ${name},\n\n
+      //     Thank you for contacting me. I will get back to you soon!\n\nBest regards,\nJean Piero`,
+      // });
     } catch (emailError) {
       console.error("EMAIL ERROR:", emailError);
 

@@ -11,7 +11,7 @@ Dashboard:
 
 1. Key F12 
 2. const handleKey = (e) => {
-      if (e.ctrlKey && e.shiftKey && e.key === "D") {
+      if (e.ctrlKey && e.shiftKey && e.key === "d") {
         setShowAdmin(true);
       }
     };
