@@ -71,15 +71,15 @@ This project evolved into a **full-stack portfolio project**, including a custom
 │    │         ├── Contact.jsx
 │    │         └── Footer.jsx
 │    └── ...
-│    ├── .env
 │    ├── App.jsx
 │    └── main.jsx
 ├── backend
-│       ├── server.js
-│       ├── Config
-│       │    ├── Supabase.js
-│       ├── Controllers
-│       └── ...
+│    ├── server.js
+│    ├── Config
+│    ├── Supabase.js
+│    ├── Controllers
+│    ├── .env
+│    └── ...
 ├── package.json
 
 ```
