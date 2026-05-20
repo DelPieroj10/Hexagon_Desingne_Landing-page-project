@@ -27,12 +27,19 @@ export const sendController = async (req, res) => {
     }
     try {
       const transporter = nodemailer.createTransport({
-        service: "gmail",
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        // service: "gmail",
         auth: {
           user: process.env.EMAIL_USER,
           pass: process.env.EMAIL_PASS,
         },
-        // family: 4,
+        family: 4,
+
+        connectionTimeout: 10000,
+        greetingTimeout: 10000,
+        socketTimeout: 15000,
       });
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
@@ -59,12 +66,11 @@ export const sendController = async (req, res) => {
     return res.status(200).json({
       message: "Message received successfully ✔",
     });
-    
   } catch (e) {
     console.error("FULL ERROR:", e);
 
     return res.status(500).json({
-      message: "Internal server error ❌"
+      message: "Internal server error ❌",
     });
   }
 };

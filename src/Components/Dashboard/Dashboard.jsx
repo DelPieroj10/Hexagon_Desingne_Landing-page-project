@@ -1,4 +1,4 @@
-import { form } from "framer-motion/client";
+// import { form } from "framer-motion/client";
 import { useState, useEffect } from "react";
 import "../Styles/contactsDashboard.css";
 
@@ -53,6 +53,17 @@ export default function Dashboard() {
   };
 
   useEffect(() => {
+    const savedAccess = localStorage.getItem("admin_access");
+    if (savedAccess === "true") {
+      setAccess(true);
+      setShowAdmin(true);
+
+      console.log("ACCESS:", access);
+      console.log("SHOW ADMIN:", showAdmin);
+    }
+  }, []);
+
+  useEffect(() => {
     if (!access) return;
     console.log("ACCESS GRANTED 🔓");
 
@@ -62,12 +73,15 @@ export default function Dashboard() {
         const res = await fetch(`${API_URL}/contacts`, {
           credentials: "include",
         });
+        console.log("FETCHING CONTACTS...");
         if (!res.ok) {
-          setContacts([]);
+          // setContacts([]);
+          console.error("Failed to fetch contacts. Status:", res.status);
           return;
         }
         const data = await res.json();
         setContacts(Array.isArray(data) ? data : []);
+        console.log("FETCHED CONTACTS:", data);
       } catch (error) {
         console.error("Error fetching contacts:", error);
         setContacts([]);
@@ -89,7 +103,7 @@ export default function Dashboard() {
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
-  if (!showAdmin) return null;
+  if (!showAdmin && !access) return null;
 
   if (!access) {
     return (

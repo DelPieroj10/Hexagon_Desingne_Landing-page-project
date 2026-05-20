@@ -1,9 +1,9 @@
 Hexagon Design Project / Deploy:
 ----------------------
 
-https://hexagon-desingne-landing-page-proje.vercel.app/
+https://hexagon-desingne-landing-page-proje.vercel.app
 hexagon-desingne-landing-page-project-6bu6818bh.vercel.app
-https://hexagon-desingne-landing-page-project.onrender.com/
+https://hexagon-desingne-landing-page-project.onrender.com
 
 
 
