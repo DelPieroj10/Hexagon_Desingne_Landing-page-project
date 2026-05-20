@@ -27,7 +27,7 @@ This project evolved into a **full-stack portfolio project**, including a custom
 * Responsive layouts with CSS Grid & Flexbox
 * Clean component-based architecture
 
-### Backend
+### Backend (🚧 Still under construction 🏗)
 * Contact form connected to a custom API
 * Automated email responses with Nodemailer
 * Message persistence using Supabase
