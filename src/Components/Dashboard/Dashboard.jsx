@@ -25,7 +25,7 @@ export default function Dashboard() {
     );
     setFilteredContacts(filtered);
   }, [search, contacts]);
-  
+
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
 
@@ -38,18 +38,24 @@ export default function Dashboard() {
       body: JSON.stringify({ password }),
     });
 
-    if (res.ok) {
-      setAccess(true);
-      localStorage.setItem("admin_access", "true");
-    } else {
-      setError("Invalid password. Please try again.");
+    if (!res.ok) {
+      const verifyRes = await fetch(`${API_URL}/admin/verify`, {
+        credentials: "include",
+      });
+
+      if (verifyRes.ok) {
+        setAccess(true);
+        localStorage.setItem("admin_access", "true");
+      } else {
+        setError("Invalid password. Please try again.");
+      }
     }
   };
 
   useEffect(() => {
     if (!access) return;
     console.log("ACCESS GRANTED 🔓");
-    
+
     const fetchContacts = async () => {
       setLoading(true);
       try {
@@ -106,7 +112,6 @@ export default function Dashboard() {
     return <p>Loading contacts...</p>;
   }
 
-
   return (
     <section>
       <h2>Contact messages</h2>
@@ -129,14 +134,12 @@ export default function Dashboard() {
           </tr>
         </thead>
         <tbody>
-          {filteredContacts.map( (contact) => (
+          {filteredContacts.map((contact) => (
             <tr key={contact.id}>
               <td>{contact.name}</td>
               <td>{contact.email}</td>
               <td>{contact.message}</td>
-              <td>
-                {new Date(contact.created_at).toLocaleDateString()}
-              </td>
+              <td>{new Date(contact.created_at).toLocaleDateString()}</td>
             </tr>
           ))}
         </tbody>
