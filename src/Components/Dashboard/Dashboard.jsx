@@ -28,6 +28,7 @@ export default function Dashboard() {
 
   const handlePasswordSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
     const res = await fetch(`${API_URL}/admin/login`, {
       method: "POST",
@@ -39,28 +40,35 @@ export default function Dashboard() {
     });
 
     if (!res.ok) {
-      const verifyRes = await fetch(`${API_URL}/admin/verify`, {
-        credentials: "include",
-      });
+      // const verifyRes = await fetch(`${API_URL}/admin/verify`, {
+      //   credentials: "include",
+      // });
 
-      if (verifyRes.ok) {
-        setAccess(true);
-        localStorage.setItem("admin_access", "true");
-      } else {
-        setError("Invalid password. Please try again.");
-      }
+      setAccess(true);
+      localStorage.setItem("admin_access", "true");
+    } else {
+      setError("Invalid password. Please try again.");
     }
   };
 
   useEffect(() => {
     const savedAccess = localStorage.getItem("admin_access");
-    if (savedAccess === "true") {
-      setAccess(true);
-      setShowAdmin(true);
+    if (savedAccess === "true") return;
 
-      console.log("ACCESS:", access);
-      console.log("SHOW ADMIN:", showAdmin);
-    }
+    fetch(`${API_URL}/admin/verify`, {
+      credentials: "include",
+    })
+      .then((res) => {
+        if (res.ok) {
+          setAccess(true);
+          setShowAdmin(true);
+        } else {
+          localStorage.removeItem("admin_access");
+        }
+      })
+      .catch((err) => localStorage.removeItem("admin_access"));
+    console.log("ACCESS:", access);
+    console.log("SHOW ADMIN:", showAdmin);
   }, []);
 
   useEffect(() => {
@@ -75,8 +83,8 @@ export default function Dashboard() {
         });
         console.log("FETCHING CONTACTS...");
         if (!res.ok) {
-          // setContacts([]);
           console.error("Failed to fetch contacts. Status:", res.status);
+          setContacts([]);
           return;
         }
         const data = await res.json();
@@ -99,7 +107,6 @@ export default function Dashboard() {
       }
     };
     window.addEventListener("keydown", handleKey);
-
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
 
