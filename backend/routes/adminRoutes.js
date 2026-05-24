@@ -1,6 +1,6 @@
 import express from "express";
 import { login, verifyAdmin } from "../controllers/adminController.js";
-import {  getContactsController } from "../controllers/contactController.js";
+import { getContactsController } from "../controllers/contactController.js";
 
 const router = express.Router();
 

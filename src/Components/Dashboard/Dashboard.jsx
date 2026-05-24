@@ -30,26 +30,31 @@ export default function Dashboard() {
     e.preventDefault();
     setError("");
 
-    const res = await fetch(`${API_URL}/admin/login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({ password }),
-    });
+    try {
+      const res = await fetch(`${API_URL}/admin/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({ password }),
+      });
 
-    if (!res.ok) {
-      setAccess(true);
-      localStorage.setItem("admin_access", "true");
-    } else {
-      setError("Invalid password. Please try again.");
+      if (res.ok) {
+        setAccess(true);
+        setShowAdmin(true);
+        localStorage.setItem("admin_access", "true");
+      } else {
+        setError("Invalid password. Please try again.");
+      }
+    } catch (err) {
+      setError("Connection error. Please try again later.");
     }
   };
 
   useEffect(() => {
     const savedAccess = localStorage.getItem("admin_access");
-    if (savedAccess === "true") return;
+    if (savedAccess !== "true") return;
 
     fetch(`${API_URL}/admin/verify`, {
       credentials: "include",
@@ -86,8 +91,8 @@ export default function Dashboard() {
         const data = await res.json();
         setContacts(Array.isArray(data) ? data : []);
         console.log("FETCHED CONTACTS:", data);
-      } catch (error) {
-        console.error("Error fetching contacts:", error);
+      } catch (err) {
+        console.error("Error fetching contacts:", err);
         setContacts([]);
       } finally {
         setLoading(false);
