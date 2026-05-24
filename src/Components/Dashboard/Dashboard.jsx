@@ -40,10 +40,6 @@ export default function Dashboard() {
     });
 
     if (!res.ok) {
-      // const verifyRes = await fetch(`${API_URL}/admin/verify`, {
-      //   credentials: "include",
-      // });
-
       setAccess(true);
       localStorage.setItem("admin_access", "true");
     } else {
