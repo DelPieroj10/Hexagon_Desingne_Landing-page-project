@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import logo_hexagon from "../assets/images/logo_hexagon.png";
+import toggle_sun from "../assets/images/sol-50.png";
+import toggle_moon from "../assets/images/image-moon.png";
 import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
@@ -22,21 +24,22 @@ export default function Navbar() {
 
     if (saved === "dark") {
       document.body.classList.add("dark-mode");
-      setIsDarkMode(true);}
+      setIsDarkMode(true);
+    }
   }, []);
 
   const toggleTheme = () => {
     const newTheme = !isDarkMode;
-      
+
     setIsDarkMode(newTheme);
 
-      if (newTheme) {
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("theme", "dark" );
-      } else {
-        document.body.classList.remove("dark-mode");
-        localStorage.setItem("theme", "light" );
-      }
+    if (newTheme) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.body.classList.remove("dark-mode");
+      localStorage.setItem("theme", "light");
+    }
   };
 
   useEffect(() => {
@@ -110,7 +113,11 @@ export default function Navbar() {
         {/* Dark Mode Toggle */}
 
         <button className="dark-toggle" onClick={toggleTheme}>
-          {isDarkMode ? "🌙 Dark" : "☀️ Light"}
+          {isDarkMode ? (
+            <img src={toggle_moon} alt="Dark Mode" /> 
+          ) : (
+            <img src={toggle_sun} alt="Light Mode" />
+          )}
         </button>
 
         {/* Mobile Icon */}
