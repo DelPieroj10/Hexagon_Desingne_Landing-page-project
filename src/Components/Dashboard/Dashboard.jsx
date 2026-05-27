@@ -1,8 +1,8 @@
-// import { form } from "framer-motion/client";
+import { form } from "framer-motion/client";
 import { useState, useEffect } from "react";
 import "../Styles/contactsDashboard.css";
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.SUPABASE_URL;
 
 export default function Dashboard() {
   const [contacts, setContacts] = useState([]);
