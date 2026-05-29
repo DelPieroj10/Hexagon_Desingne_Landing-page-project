@@ -1,18 +1,16 @@
-import { form } from "framer-motion/client";
 import { useState, useEffect } from "react";
 import "../Styles/contactsDashboard.css";
 
-const API_URL = import.meta.env.SUPABASE_URL;
+const API_URL = import.meta.env.VITE_API_URL;
+console.log(import.meta.env.VITE_API_URL)
 
-export default function Dashboard() {
+export default function Dashboard({ showAdmin, setShowAdmin }) {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const [access, setAccess] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
-  const [showAdmin, setShowAdmin] = useState(false);
 
   const [search, setSearch] = useState("");
   const [filteredContacts, setFilteredContacts] = useState([]);
@@ -26,63 +24,38 @@ export default function Dashboard() {
     setFilteredContacts(filtered);
   }, [search, contacts]);
 
-  const handlePasswordSubmit = async (e) => {
-    e.preventDefault();
-    setError("");
-
-    try {
-      const res = await fetch(`${API_URL}/admin/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        body: JSON.stringify({ password }),
-      });
-
-      if (res.ok) {
-        setAccess(true);
-        setShowAdmin(true);
-        localStorage.setItem("admin_access", "true");
-      } else {
-        setError("Invalid password. Please try again.");
-      }
-    } catch (err) {
-      setError("Connection error. Please try again later.");
-    }
-  };
-
   useEffect(() => {
-    const savedAccess = localStorage.getItem("admin_access");
-    if (savedAccess !== "true") return;
+    const savedToken = sessionStorage.getItem("admin_token");
+    if (savedToken !== "true") return;
 
     fetch(`${API_URL}/admin/verify`, {
-      credentials: "include",
+      headers: {
+        Authorization: `Bearer ${savedToken}`,
+      },
     })
       .then((res) => {
         if (res.ok) {
           setAccess(true);
-          setShowAdmin(true);
         } else {
-          localStorage.removeItem("admin_access");
+          sessionStorage.removeItem("admin_token");
         }
       })
-      .catch((err) => localStorage.removeItem("admin_access"));
-    console.log("ACCESS:", access);
-    console.log("SHOW ADMIN:", showAdmin);
+      .catch((err) => sessionStorage.removeItem("admin_token"));
   }, []);
 
   useEffect(() => {
     if (!access) return;
     console.log("ACCESS GRANTED 🔓");
-
+    
     const fetchContacts = async () => {
       setLoading(true);
+      const token = sessionStorage.getItem("admin_token");
       try {
         const res = await fetch(`${API_URL}/contacts`, {
-          credentials: "include",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         });
-        console.log("FETCHING CONTACTS...");
         if (!res.ok) {
           console.error("Failed to fetch contacts. Status:", res.status);
           setContacts([]);
@@ -100,16 +73,40 @@ export default function Dashboard() {
     };
     fetchContacts();
   }, [access]);
+  
+  const handlePasswordSubmit = async (e) => {
+    e.preventDefault();
+    setError("");
 
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "d") {
-        setShowAdmin(true);
+      try {
+      const res = await fetch(`${API_URL}/admin/login`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // credentials: "include",
+        body: JSON.stringify({ password }),
+      });
+
+      if (res.ok) {
+        const data = await res.json();
+        sessionStorage.setItem("admin_token", data.token);
+        setAccess(true);
+      } else {
+        setError("Invalid password. Please try again.");
       }
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, []);
+    } catch (err) {
+      setError("Connection error. Please try again later.");
+    }
+  };
+
+  const handleLogout = () => {
+    setAccess(false);
+    setContacts([]);
+    setPassword("");
+    setError("");
+    sessionStorage.removeItem("admin_token");
+  };
 
   if (!showAdmin && !access) return null;
 
@@ -123,8 +120,9 @@ export default function Dashboard() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Enter</button>
-
+        <button className="db-btn-secondary" type="submit">
+          Enter
+        </button>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
     );
@@ -136,7 +134,10 @@ export default function Dashboard() {
 
   return (
     <section>
-      <h2>Contact messages</h2>
+      <div className="btn-dashboard">
+        <h2>Contact messages</h2>
+        <button className="db-btn-secondary" onClick={handleLogout}>Logout</button>
+      </div>
 
       <input
         className="dashboard"

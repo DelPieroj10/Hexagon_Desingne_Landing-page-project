@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import Services from "./Components/Services";
@@ -13,10 +14,21 @@ import Contact from "./Components/Contact-footer/Contact";
 import Footer from "./Components/Contact-footer/Footer";
 import Dashboard from "./Components/Dashboard/Dashboard";
 
-
 import "./Components/Styles/App.css";
 
 export default function App() {
+  const [showAdmin, setShowAdmin] = useState(false);
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "d") {
+        setShowAdmin((prev) => !prev);
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
   return (
     <div>
       <Navbar />
@@ -32,7 +44,7 @@ export default function App() {
       <FAQ />
       <Contact />
       <Footer />
-      <Dashboard />
+      <Dashboard showAdmin={showAdmin} setShowAdmin={setShowAdmin}/>
     </div>
   );
 }

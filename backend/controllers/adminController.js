@@ -2,13 +2,13 @@ export const login = (req, res) => {
   const { password } = req.body;
 
   if (password === process.env.ADMIN_TOKEN) {
-    res.cookie("admin_token", "true", {
-      httpOnly: true,
-      secure: true,
-      sameSite: "none",
-      maxAge: 24 * 60 * 60 * 1000, 
-    });
-    return res.json({ success: true, message: "Access granted 🔓" });
+    // res.cookie("admin_token", "true", {
+    //   httpOnly: true,
+    //   secure: true,
+    //   sameSite: "none",
+    //   maxAge: 24 * 60 * 60 * 1000, 
+    // });
+    return res.json({ success: true, token: process.env.ADMIN_TOKEN, message: "Access granted 🔓" });
   }
   return res
     .status(401)
@@ -20,9 +20,16 @@ export const login = (req, res) => {
 };
 
 export const verifyAdmin = (req, res, next) => {
-  if (req.cookies.admin_token === "true") {
+  const authHeader = req.headers.authorization;
+  const token = authHeader && authHeader.split(" ")[1];
+
+  if (token === process.env.ADMIN_TOKEN) {
     return next();
   }
+
+  // if (req.cookies.admin_token === "true") {
+  //   return next();
+  // }
   return res
   .status(401)
   .json({ error: "Unauthorized 🕵🏻‍♂️" });

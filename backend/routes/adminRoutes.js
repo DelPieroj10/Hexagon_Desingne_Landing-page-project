@@ -4,11 +4,10 @@ import { getContactsController } from "../controllers/contactController.js";
 
 const router = express.Router();
 
-router.get("/contacts", verifyAdmin, getContactsController);
-
+router.post("/admin/login", login);
 router.get("/admin/verify", verifyAdmin,(req, res) => {
   res.json({ success: true, message: "Admin access verified 🔓" });
 });
-router.post("/admin/login", login);
+router.get("/contacts", verifyAdmin, getContactsController);
 
 export default router;

@@ -29,3 +29,19 @@ tr:hover {
   color: whitesmoke;
 }
 
+.btn-dashboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.db-btn-secondary{
+  background: #333;
+  color: #aca8a6;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 1rem;
+}
