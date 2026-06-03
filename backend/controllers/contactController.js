@@ -1,19 +1,15 @@
-// import nodemailer from "nodemailer";
-//import { Resend } from "resend";
-import * as Brevo from "@getbrevo/brevo";
+import nodemailer from "nodemailer";
 import supabase from "../config/supabase.js";
 
-const brevoClient = new Brevo.TransactionalEmailsApi();
-brevoClient.authentication ["api_key"].api_key = process.env.BREVO_API_KEY;
-
-const sendEmail = async ({ to, toName, from, fromName, subject, text }) => {
-  const email = new Brevo.SendSmtpEmail();
-  email.sender = { email: from, name: fromName };
-  email.to = [{ email: to, name: toName }];
-  email.subject = subject;
-  email.textContent = text;
-  return brevoClient.sendTransacEmail(email);
-};
+const transporter = nodemailer.createTransport({
+  host: "smtp-relay.brevo.com",
+  port: 587,
+  secure: false,
+  auth: {
+    user: process.env.BREVO_SMTP_USER,  
+    pass: process.env.BREVO_SMTP_KEY,
+  },
+});
 
 export const sendController = async (req, res) => {
   const { name, email, message } = req.body || {};
@@ -47,32 +43,24 @@ export const sendController = async (req, res) => {
   }
 
   try {
-    await sendEmail({
+    await transporter.sendMail({
+      from: `Portfolio <${process.env.BREVO_SMTP_USER}>`,
       to: process.env.EMAIL_USER,
-      toName: "Jean Piero",
-      from: process.env.EMAIL_USER,
-      fromName: "Jean Piero Portfolio",
-      //replyTo: email,
+      replyTo: email,
       subject: "New message from contact form",
       text: `You have received a new message from: \nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
     });
-    await sendEmail({
-      to: email,
-      toName: name,
-      from: process.env.EMAIL_USER,
-      fromName: "Jean Piero Parra",
-      subject: "Thanks for contacting me!",
-      text: `Hello ${name},\n\n
-          Thank you for contacting me. I will get back to you soon!\n\nBest regards,\nJean Piero`,
-    });
+    // await transporter.sendMail({
+    //   from: `Jean Piero Parra <${process.env.BREVO_SMTP_USER}>`,
+    //   to: email,
+    //   subject: "Thanks for contacting me!",
+    //   text: `Hello ${name},\n\n
+    //       Thank you for contacting me. I will get back to you soon!\n\nBest regards,\nJean Piero`,
+    // });
     console.log("EMAILS SENT SUCCESSFULLY");
-
   } catch (emailError) {
     console.error("BREVO EMAIL ERROR:", emailError);
 
-    return res.status(200).json({
-      message: "Error sending email ❌",
-    });
   }
   return res.status(200).json({
     message: "Message received successfully ✔",

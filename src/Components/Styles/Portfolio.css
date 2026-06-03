@@ -110,7 +110,6 @@ body.dark-mode .portfolio {
   border-radius: 6px;
   margin-top: 20px;
   margin-bottom: 25px;
-  cursor:pointer;
 }
 
 .featured__tags span:hover {
@@ -219,7 +218,6 @@ body.dark-mode .portfolio {
   justify-content: center;
   gap: 6px;
   margin: 5px;
-  cursor: pointer;
 }
 
 .tags span {

@@ -21,12 +21,12 @@ export default function AboutUs() {
           </h2>
           <p className="about__paragraph">
             I’m a Frontend Developer specialized in building intuitive and
-            scalable web applications using React and modern web technologies.
+            scalable web applications using React and others technologies.
             <br />
             <br />
-            My background in psychology, coaching, marketing, advertising and
-            graphic design—developed through courses and hands-on
-            learning—allows me to understand how people think, interact and make
+            My background in psychology, coaching, marketing, advertising, and
+            graphic design developed through courses and hands-on learning,
+            allows me to understand how people think, interact and make
             decisions, which I now apply to create more intuitive and meaningful
             digital experiences.
             <br />
