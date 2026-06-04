@@ -29,7 +29,7 @@ This project evolved into a **full-stack portfolio project**, including a custom
 
 ### Backend (🚧 Still under construction 🏗)
 * Contact form connected to a custom API
-* Automated email responses with Nodemailer
+* Automated email responses with Nodemailer and EmailJs
 * Message persistence using Supabase
 * Express server with modular routes
 * Secure environment variable handling
@@ -50,6 +50,8 @@ This project evolved into a **full-stack portfolio project**, including a custom
 * Node.js
 * Express.js
 * Nodemailer
+* Brevo SMTP
+* EmailJs
 * Supabase
 * Dotenv
 * CORS
