@@ -90,6 +90,10 @@ html {
     z-index: -2;
 }
 
+.dark-mode .navbar::before {
+background-color: var(--bg);
+}
+
 .nav_container {
   display: flex;
   align-items: center;
