@@ -11,6 +11,10 @@
     margin-bottom: 30px;
 }
 
+.dark-mode .footer {
+background-color: var(--bg);
+}
+
 .footer__title,
 .footer__copy {
     color: #ffff;
