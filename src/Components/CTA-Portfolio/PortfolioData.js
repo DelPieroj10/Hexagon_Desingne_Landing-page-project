@@ -1,4 +1,5 @@
 import swapiApp from "../../assets/projects/swapi_app-infinite_scroll.png";
+import opportunity_scoutApp from "../../assets/projects/opportunity_scout-app.png";
 import productExplorer from "../../assets/projects/react-product-explorer-2.png";
 import facialRetouching from "../../assets/projects/facial_retouch-1.png";
 import El_Silencio_de_las_Tortugas from "../../assets/projects/flayer-player-el_silencio_de_la_tortuga-1.jpg";
@@ -24,6 +25,22 @@ export const projects = [
   },
   {
     id: 2,
+    title: "Opportunity Scout — Discover market opportunities faster & UX",
+    description: "An app that delivers a structured summary of opportunities, risks, and recommendations for a given market category.",
+    process: [
+      "Managed global state using Context API",
+      "Implemented Tailwind CSS for responsive design",
+      "Implemented Typescript for type safety and better code maintainability",
+      "Structured reusable components",
+      "🚧 Project currently under active development"
+    ],
+    image: opportunity_scoutApp,
+    demo: "No yet available",
+    github: "https://github.com/DelPieroj10/Opportunity_Scout_Project.git",
+    tags: ["React", "API", "Tailwind CSS", "Typescript", "UX"],
+  },
+  {
+    id: 3,
     title: "Shopping Cart — State Management & User Interaction",
     description: "An interactive shopping cart application focused on managing global state and improving user experience.",
     process: [
@@ -38,7 +55,7 @@ export const projects = [
     tags: ["React", "API", "CSS", "Pagination"],
   },
   {
-    id: 3,
+    id: 4,
     title: "Facial Retouching",
     description: "Retouching with Dodge & Burne and, High Pass technique",
     process: [
@@ -51,7 +68,7 @@ export const projects = [
     tags: ["Graphic Design", "Photoshop", "Photo", "Design"],
   },
   {
-    id: 4,
+    id: 5,
     title: "El Silencio de las Tortugas",
     description: "A brochure about the play “El Silencio de las Tortugas” by Lucia Laragione, performed at Teatro Teresa Carreño in Caracas, Venezuela.",
     process: [
@@ -66,7 +83,7 @@ export const projects = [
     tags: ["Graphic Design", "Illustrator", "Marketing", "Design"],
   },
   {
-    id: 5,
+    id: 6,
     title: "Espantapájaros",
     description: "A story by Aquiles Nazoa",
     process: [
@@ -81,7 +98,7 @@ export const projects = [
     tags: ["Graphic Design", "Illustrator", "Marketing", "Design"],
   },
   {
-    id: 6,
+    id: 7,
     title: "Kitties infinite scroll app calling 2 APIs",
     description: "React app that consumes two public APIs to display images of cats accompanied by descriptive text, implementing infinite scroll using Intersection Observer.",
     process: [
