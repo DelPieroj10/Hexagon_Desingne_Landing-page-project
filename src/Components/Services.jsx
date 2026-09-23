@@ -21,7 +21,7 @@ export default function Services() {
     },
     {
       title: "Why Me?",
-      text: "I am a junior developer focused on growth, clean code and real-world impact.",
+    text: "I am a Software Engineer focused on growth, clean code and real-world impact.",
       image: Strategy_branding,
       href: "#about"
     }
